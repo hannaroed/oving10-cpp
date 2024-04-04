@@ -7,6 +7,7 @@
 
 
 // For å sette labelfarge i henhold til hvor mange miner som er rundt
+// Fails to initialize when compiled with clang++ on MacOS, all Colors become black transparent
 const std::map<int, TDT4102::Color> minesToColor{{1, TDT4102::Color::blue},
 											{2, TDT4102::Color::red},
 											{3, TDT4102::Color::dark_green},
@@ -15,6 +16,24 @@ const std::map<int, TDT4102::Color> minesToColor{{1, TDT4102::Color::blue},
 											{6, TDT4102::Color::dark_cyan},
 											{7, TDT4102::Color::dark_red},
 											{8, TDT4102::Color::gold}};
+
+// const std::vector<TDT4102::Color> minesToColorVec{TDT4102::Color::blue,
+// 											TDT4102::Color::red,
+// 											TDT4102::Color::dark_green,
+// 											TDT4102::Color::dark_magenta,
+// 											TDT4102::Color::dark_blue,
+// 											TDT4102::Color::dark_cyan,
+// 											TDT4102::Color::dark_red,
+// 											TDT4102::Color::gold};
+
+// const TDT4102::Color minesToColorArr[8] = {TDT4102::Color::blue,
+// 											TDT4102::Color::red,
+// 											TDT4102::Color::dark_green,
+// 											TDT4102::Color::dark_magenta,
+// 											TDT4102::Color::dark_blue,
+// 											TDT4102::Color::dark_cyan,
+// 											TDT4102::Color::dark_red,
+// 											TDT4102::Color::gold};
 
 
 // De forskjellige tilstandene en Tile kan være i
