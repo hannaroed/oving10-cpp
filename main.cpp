@@ -2,9 +2,9 @@
 
 int main()
 {
-	constexpr int width = 10;
-	constexpr int height = 10;
-	constexpr int mines = 50;
+	constexpr int width = 20;
+	constexpr int height = 20;
+	constexpr int mines = 80;
 
 	Point startPoint{ 200, 300 };
 	MinesweeperWindow mw{startPoint.x, startPoint.y, width, height, mines, "Minesweeper" };

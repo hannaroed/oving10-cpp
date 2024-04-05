@@ -1,6 +1,7 @@
 #pragma once
 #include "AnimationWindow.h"
 #include "Tile.h"
+#include "widgets/TextInput.h"
 
 using namespace std;
 using namespace TDT4102;
@@ -12,6 +13,7 @@ public:
 	// storrelsen til hver tile
 	static constexpr int cellSize = 30;
 	MinesweeperWindow(int x, int y, int width, int height, int mines, const string& title);
+
 private:
 	const int width;		// Bredde i antall tiles
 	const int height;		// Hoyde i antall tiles
@@ -41,5 +43,18 @@ private:
 
 	// callback funksjoner til Tile knappene
 	void cb_click();
+
+	void lostGame();
+	void wonGame();
 	
+	int currentMines();
+
+	// Tekst felt og knapper
+	TextInput textField;
+	Button restartBtn;
+	Button quitBtn;
+
+	// Callback funksjoner til knappene
+	void cb_restart();
+	void cb_quit();
 };

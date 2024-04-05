@@ -1,4 +1,5 @@
 #include "Tile.h"
+#include "MinesweeperWindow.h"
 #include <iostream>
 
 
@@ -34,6 +35,15 @@ void Tile::flag() {
 	}
 }
 
+void Tile::close() {
+	if (state == Cell::open || state == Cell::flagged) {
+		set_label("");
+		setButtonColor(TDT4102::Color::silver);
+		state = Cell::closed;
+	}
+}
+
+// Til å bruke istede når man får problem med colormap med macOS
 TDT4102::Color numMinesToColor(int n) {
 	// Will be the same object at every call! Gets constructed once for the first call, doesn't get deallocated when the function ends.
 	static std::vector<TDT4102::Color> minesToColorVec;
@@ -58,6 +68,6 @@ void Tile::setAdjMines(int n) {
         throw std::out_of_range("Invalid number of adjacent mines: Must be between 1 and 8.");
     }
 	set_label(std::to_string(n));
-	set_label_color(numMinesToColor(n));
+	set_label_color(minesToColor.at(n));
 	// set_label_color(TDT4102::Color::green);
 }
